@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Database, Cloud, Mail, Github, Linkedin, ChevronDown, ExternalLink, Server, Cpu, Workflow } from 'lucide-react';
 
 export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -84,7 +83,6 @@ export default function Portfolio() {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(sectionId);
     }
   };
 
@@ -117,16 +115,7 @@ export default function Portfolio() {
         <div className="max-w-4xl text-center">
           <div className="mb-6 inline-block">
             <div className="w-40 h-40 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-1 mx-auto">
-              <img 
-                src="E:\adobe\black\WhatsApp Image 2024-08-19 at 10.44.51 PM.jpeg" 
-                alt="Muhammad Hamza Khan"
-                className="w-full h-full rounded-full object-cover bg-slate-800"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextElementSibling.style.display = 'flex';
-                }}
-              />
-              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center" style={{display: 'none'}}>
+              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
                 <Database className="w-16 h-16 text-blue-400" />
               </div>
             </div>
